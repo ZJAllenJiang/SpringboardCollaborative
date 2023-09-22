@@ -1,0 +1,7 @@
+tf-nightly
+pandas==1.1.3
+scikit-learn
+protobuf==3.20.1
+matplot==2.2.5
+django
+django-cors-headers
