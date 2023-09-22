@@ -28,6 +28,11 @@
 			<version>${aws-java-sdk.version}</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>software.amazon.awssdk</groupId>
+			<artifactId>sts</artifactId>
+			<version>${aws-java-sdk.version}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
