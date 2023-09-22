@@ -46,7 +46,7 @@ const steps = ['Select a type', 'Upload a sheet', 'Match columns'];
 
 // =============================|| TABLER ICONS ||============================= //
 
-const Import = () => {
+const Batch = () => {
     const [activeStep, setActiveStep] = React.useState(0);
     // step1 select type
     const [type, setType] = useState('addOrUpdate');
@@ -184,4 +184,4 @@ const Import = () => {
     );
 }
 
-export default Import;
+export default Batch;

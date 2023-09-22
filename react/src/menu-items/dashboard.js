@@ -1,5 +1,5 @@
 // assets
-import { IconDashboard, IconChecklist, IconOld, IconAffiliate } from '@tabler/icons';
+import { IconDashboard, IconChecklist, IconOld, IconAffiliate, IconBrandFinder } from '@tabler/icons';
 
 
 // ==============================|| DASHBOARD MENU ITEMS ||============================== //
@@ -18,12 +18,20 @@ const dashboard = {
       breadcrumbs: false
     },
     {
+      id: 'dashboard-match',
+      title: 'Match',
+      type: 'item',
+      url: '/dashboard/match',
+      icon: IconBrandFinder,
+      breadcrumbs: false
+    },
+    {
       id: 'dashboard-tasks',
       title: 'Cases',
       type: 'item',
-      url: '/dashboard/Cases',
+      url: '/dashboard/cases',
       icon: IconChecklist,
-      breadcrumbs: false
+      breadcrumbs: false,
     },
     {
       id: 'dashboard-recipients',

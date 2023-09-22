@@ -5,23 +5,23 @@ import { IconOld, IconAffiliate } from '@tabler/icons';
 // ==============================|| DASHBOARD MENU ITEMS ||============================== //
 
 const imports = {
-  id: 'import',
-  title: 'Import',
+  id: 'batch',
+  title: 'Batch',
   type: 'group',
   children: [
     {
-      id: 'import-recipients',
-      title: 'recipients',
+      id: 'batch-recipients',
+      title: 'Recipients',
       type: 'item',
-      url: '/import/recipients',
+      url: '/batch/recipients',
       icon: IconOld,
       breadcrumbs: false
     },
     {
-      id: 'import-organizations',
+      id: 'batch-organizations',
       title: 'Organizations',
       type: 'item',
-      url: '/import/organizations',
+      url: '/batch/organizations',
       icon: IconAffiliate,
       breadcrumbs: false
     }

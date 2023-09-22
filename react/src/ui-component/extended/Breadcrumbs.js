@@ -29,7 +29,6 @@ const linkSX = {
 
 const Breadcrumbs = ({ card, divider, icon, icons, maxItems, navigation, rightAlign, separator, title, titleBottom, ...others }) => {
   const theme = useTheme();
-
   const iconStyle = {
     marginRight: theme.spacing(0.75),
     marginTop: `-${theme.spacing(0.25)}`,
@@ -40,6 +39,7 @@ const Breadcrumbs = ({ card, divider, icon, icons, maxItems, navigation, rightAl
 
   const [main, setMain] = useState();
   const [item, setItem] = useState();
+  console.log({navigation})
 
   // set active item state
   const getCollapse = (menu) => {

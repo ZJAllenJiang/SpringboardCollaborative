@@ -27,6 +27,7 @@ const SelectType = (props) => {
                 <FormControlLabel value="add" control={<Radio />} label="Add" />
                 <FormControlLabel value="update" control={<Radio />} label="Update" />
                 <FormControlLabel value="addOrUpdate" control={<Radio />} label="Add or Update" />
+                <FormControlLabel value="delete" control={<Radio />} label="Delete" />
             </RadioGroup>
         </StyledRoot>
     );

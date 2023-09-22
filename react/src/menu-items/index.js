@@ -1,5 +1,5 @@
 import dashboard from './dashboard';
-import pages from './pages';
+import pages from './auth';
 import utilities from './utilities';
 import other from './other';
 import imports from './imports';
