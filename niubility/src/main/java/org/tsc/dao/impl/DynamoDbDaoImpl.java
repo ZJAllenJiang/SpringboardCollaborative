@@ -25,6 +25,15 @@ public  class DynamoDbDaoImpl implements DynamoDbDao {
     }
 
     @Override
+    public <S> void saveAll(List<S> ss) {
+        for (S s:
+             ss) {
+            save(s);
+        }
+    }
+
+
+    @Override
     public <S> S get(String id, Class<S> clazz) {
         PageIterable<S> navigatorPageIterable = dynamoDbOperations.query(
                 QueryEnhancedRequest.builder()

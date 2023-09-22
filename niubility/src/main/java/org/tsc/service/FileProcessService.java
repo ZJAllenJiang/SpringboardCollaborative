@@ -8,4 +8,6 @@ public interface FileProcessService {
     void upload(MultipartFile multipartFile);
 
     Resource download(String key);
+
+    void delete(String key);
 }

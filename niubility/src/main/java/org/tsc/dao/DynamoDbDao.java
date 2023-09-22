@@ -6,6 +6,8 @@ public interface DynamoDbDao {
 
     <S> void save(S s);
 
+    <S> void saveAll(List<S> ss);
+
     <S> S get(String id, Class<S> clazz);
 
     <S> void update(S s);

@@ -19,6 +19,11 @@ public class DefaultCrudServiceImpl implements CrudService {
     }
 
     @Override
+    public <S> void saveAll(List<S> ss) {
+        dynamoDbDao.saveAll(ss);
+    }
+
+    @Override
     public <S> S get(String id, Class<S> clazz) {
         return dynamoDbDao.get(id, clazz);
     }

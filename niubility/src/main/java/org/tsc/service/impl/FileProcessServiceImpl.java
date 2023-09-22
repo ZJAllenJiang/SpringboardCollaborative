@@ -19,7 +19,7 @@ public class FileProcessServiceImpl implements FileProcessService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(FileProcessServiceImpl.class);
 
-    public static String BUCKET = "tsc-bucket-0920";
+    public static String BUCKET = "tsc-bucket-0922";
 
     @Autowired
     private S3Template s3Template;
@@ -41,5 +41,10 @@ public class FileProcessServiceImpl implements FileProcessService {
             LOGGER.error("Fail to download file given key {}", key);
         }
         return download;
+    }
+
+    @Override
+    public void delete(String key) {
+        s3Template.deleteObject(BUCKET, key);
     }
 }

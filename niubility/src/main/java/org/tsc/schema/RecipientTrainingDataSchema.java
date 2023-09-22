@@ -19,7 +19,7 @@ public class RecipientTrainingDataSchema {
     private boolean elderly;
     private  boolean serviceConnections;
     private boolean reentry;
-    private boolean disablity;
+    private boolean disability;
     private boolean socialSecurity;
     private boolean housingProgram;
 }
