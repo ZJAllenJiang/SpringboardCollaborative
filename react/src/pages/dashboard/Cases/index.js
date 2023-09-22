@@ -119,7 +119,7 @@ const Cases = () => {
               ),
             renderCell: (params) => {
                 const { time, url } = params.value;
-                return <Link href={url || '#'} color="inherit" underline="always">
+                return <Link href="https://citi.zoom.us/j/8816510783?pwd=TGtlUDNicWtnT0cvQ1VwM1N1NVNnQT09" target="_blank" color="inherit" underline="always">
                   {time}
                 </Link>
             },
