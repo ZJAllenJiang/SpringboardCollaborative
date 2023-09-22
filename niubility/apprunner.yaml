@@ -1,0 +1,8 @@
+version: 1.0
+runtime: Corretto17 
+build:
+  commands:
+    build:
+      - mvn clean package
+run: 
+  command: java -jar target/niubility-0.0.1-SNAPSHOT.jar
