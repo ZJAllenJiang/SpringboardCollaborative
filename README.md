@@ -4,7 +4,7 @@
 The Springboard Collaborative (TSC) is a statewide Delaware nonprofit building dignified dwellings and communities that foster well-being for Delawareans in greatest need (those experiencing homelessness, housing insecurity, economic hardship, etc.), concurrently connecting compromised populations with community resources to build a better life. 
 
 ## Deployment
-Frontend: https://mfxegiv3mc.us-east-1.awsapprunner.com/nuibility  
+Frontend: https://m6uccanu6f.us-east-1.awsapprunner.com/nuibility/
 
 Backend: https://xme3umxxib.us-east-1.awsapprunner.com/swagger-ui/index.html  
 
