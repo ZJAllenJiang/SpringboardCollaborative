@@ -52,6 +52,7 @@
       "@babel/preset-react"
     ]
   },
+  "proxy": "https://xme3umxxib.us-east-1.awsapprunner.com/",
   "browserslist": {
     "production": [
       "defaults",

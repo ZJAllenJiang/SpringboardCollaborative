@@ -7,7 +7,9 @@ import imports from './imports';
 // ==============================|| MENU ITEMS ||============================== //
 
 const menuItems = {
-  items: [dashboard, imports, pages, utilities, other]
+  items: [dashboard, imports, pages]
 };
+
+// items: [dashboard, imports, pages, utilities, other]
 
 export default menuItems;
