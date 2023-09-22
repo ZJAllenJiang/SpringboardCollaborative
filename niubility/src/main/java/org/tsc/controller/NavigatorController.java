@@ -6,8 +6,10 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.tsc.model.Navigator;
+import org.tsc.model.Recipient;
 import org.tsc.schema.ResponseSchema;
 import org.tsc.service.CrudService;
+import org.tsc.service.NavigatorService;
 
 import java.util.List;
 
@@ -19,6 +21,9 @@ public class NavigatorController {
 
     @Autowired
     private CrudService crudService;
+
+    @Autowired
+    private NavigatorService navigatorService;
 
     @PostMapping(value = "/add")
     @ResponseBody
@@ -85,6 +90,13 @@ public class NavigatorController {
     @ResponseBody
     public List<Navigator> getNavigators() {
         return crudService.getAll(Navigator.class);
+    }
+
+    @GetMapping(value = "/getRecommendNav")
+    @Operation(summary = "Get Recommend Navigators", description = "get Recommend Navigators for service providing")
+    @ResponseBody
+    public List<Navigator> getRecommendNav(@RequestParam("recipientId") String recipientId) {
+        return navigatorService.getRecommendedNavigators(crudService.get(recipientId, Recipient.class));
     }
 
 }

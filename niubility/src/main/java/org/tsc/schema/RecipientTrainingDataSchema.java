@@ -14,7 +14,7 @@ public class RecipientTrainingDataSchema {
     private  int urgent;
     private boolean employment;
     private  boolean mentalHealthSupport;
-    private boolean meidicalCare;
+    private boolean medicalCare;
     private boolean lifeSkills;
     private boolean elderly;
     private  boolean serviceConnections;

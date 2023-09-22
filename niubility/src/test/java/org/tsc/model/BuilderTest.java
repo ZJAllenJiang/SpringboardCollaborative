@@ -6,6 +6,7 @@ import org.tsc.model.builder.RecipientBuilder;
 
 public class BuilderTest {
 
+
     @Test
     public void testBuilder() {
         Person person = RecipientBuilder.aRecipient()
@@ -14,4 +15,5 @@ public class BuilderTest {
                 .build();
         Assert.notNull(person);
     }
+
 }

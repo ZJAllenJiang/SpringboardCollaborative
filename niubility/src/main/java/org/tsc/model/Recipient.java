@@ -5,9 +5,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.tsc.schema.RecipientExcelFlattenSchema;
+import org.tsc.schema.RecipientTrainingDataSchema;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbPartitionKey;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -75,6 +77,29 @@ public class Recipient extends Person {
         flattenSchema.setInMentalTreatment(inMentalTreatment);
         flattenSchema.setMentalHealthProvider(mentalHealthProvider);
         return flattenSchema;
+    }
+
+    public RecipientTrainingDataSchema getTrainingSchema() {
+        RecipientTrainingDataSchema recipientTrainingDataSchema =
+                RecipientTrainingDataSchema.builder()
+                        .name(getFirstName() == null ? "" : getFirstName()
+                                + ", " + getLastName() == null ? "" : getLastName())
+                        .sex(getGender())
+                        .urgent(getUrgent()).build();
+        List<RecipientNeed> needs = getAssistanceNeeded();
+        if (needs != null && !needs.isEmpty()) {
+            recipientTrainingDataSchema.setEmployment(needs.contains(RecipientNeed.EMPLOYMENT));
+            recipientTrainingDataSchema.setMentalHealthSupport(needs.contains(RecipientNeed.MENTAL_HEALTH_SUPPORT));
+            recipientTrainingDataSchema.setMedicalCare(needs.contains(RecipientNeed.MEDICAL_CARE));
+            recipientTrainingDataSchema.setLifeSkills(needs.contains(RecipientNeed.LIFE_SKILLS));
+            recipientTrainingDataSchema.setElderly(needs.contains(RecipientNeed.ELDERLY));
+            recipientTrainingDataSchema.setServiceConnections(needs.contains(RecipientNeed.SERVICE_CONNECTIONS));
+            recipientTrainingDataSchema.setReentry(needs.contains(RecipientNeed.REENTRY));
+            recipientTrainingDataSchema.setDisability(needs.contains(RecipientNeed.DISABILITY));
+            recipientTrainingDataSchema.setSocialSecurity(needs.contains(RecipientNeed.SOCIAL_SECURITY));
+            recipientTrainingDataSchema.setHousingProgram(needs.contains(RecipientNeed.HOUSING_PROGRAM));
+        }
+        return recipientTrainingDataSchema;
     }
 
 }

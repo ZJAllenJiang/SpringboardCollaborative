@@ -17,6 +17,7 @@ import org.tsc.schema.ResponseSchema;
 import org.tsc.service.CrudService;
 import org.tsc.service.FileProcessService;
 import org.tsc.service.RecipientsService;
+import org.tsc.service.TSCTrackService;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -118,13 +119,12 @@ public class RecipientController {
         return null;
     }
 
-
     @GetMapping("/query")
     @ResponseBody
     @Operation(summary = "Query Recipient", description = "Query Recipient from System")
     public Recipient queryRecipient(@RequestParam(value = "id") String id) {
-        Recipient Recipient = crudService.get(id, Recipient.class);
-        return Recipient;
+        Recipient recipient = crudService.get(id, Recipient.class);
+        return recipient;
     }
 
     @PostMapping(value = "/update")
