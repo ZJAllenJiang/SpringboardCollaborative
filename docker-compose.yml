@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  frontend:
+    build:
+      context: ./react
+    ports:
+      - "3000:80"
+    environment:
+      - REACT_APP_API_URL=http://backend:8080
+
+  backend:
+    build:
+      context: ./niubility
+    ports:
+      - "8080:8080"
+
+  python-service:
+    build:
+      context: ./algorithm
+    ports:
+      - "5000:5000"  # Assuming your Python app runs on port 5000
