@@ -1,6 +1,6 @@
 package org.tsc.schema;
 
-import anno.Excel;
+import org.tsc.anno.Excel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

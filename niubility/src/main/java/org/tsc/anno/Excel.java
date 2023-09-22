@@ -1,4 +1,4 @@
-package anno;
+package org.tsc.anno;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -14,6 +14,6 @@ public @interface Excel {
 
     int index() default -1;
 
-    boolean isMust() default true;
+    boolean isMust() default false;
 }
 

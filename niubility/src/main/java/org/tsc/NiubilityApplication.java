@@ -17,6 +17,7 @@ import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 import software.amazon.awssdk.services.dynamodb.model.ListTablesRequest;
 import software.amazon.awssdk.services.dynamodb.model.ListTablesResponse;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -65,6 +66,7 @@ public class NiubilityApplication {
 
 
 			initOrganizations().forEach(dynamoDbOperations::save);
+			initNavigators().forEach(dynamoDbOperations::save);
 		};
 	}
 
@@ -135,5 +137,60 @@ public class NiubilityApplication {
 		return Arrays.asList(fscaa, laRedHealthCenter, marigold, netCenters, bvs, bay, dcu, joyfullyConnectedFoundation,
 				theDsamhBridgeClinic, promise, actTeam, bccs, georgetownPolice);
 
+	}
+
+	private List<Navigator> initNavigators() {
+		List<Navigator> navigators = new ArrayList<>();
+
+		Navigator navigator1 = new Navigator();
+		navigator1.setNavigatorId("NAV001");
+		navigator1.setFirstName("John");
+		navigator1.setLastName("Doe");
+		navigator1.setDateOfBirth("1990-01-01");
+		navigator1.setAge(33);
+		navigator1.setGender(Gender.MALE);
+		navigator1.setRace(Race.BLACK);
+		navigator1.setPhoneNumber("123-456-7890");
+		
+		Navigator navigator2 = new Navigator();
+		navigator2.setNavigatorId("NAV002");
+		navigator2.setFirstName("Jane");
+		navigator2.setLastName("Smith");
+		navigator2.setDateOfBirth("1985-05-15");
+		navigator2.setAge(38);
+		navigator2.setGender(Gender.FEMALE);
+		navigator2.setRace(Race.YELLOW);
+		navigator2.setPhoneNumber("124-567-8901");
+
+		Navigator navigator3 = new Navigator();
+		navigator3.setNavigatorId("NAV003");
+		navigator3.setFirstName("Mike");
+		navigator3.setLastName("Brown");
+		navigator3.setDateOfBirth("1992-08-23");
+		navigator3.setAge(31);
+		navigator3.setGender(Gender.MALE);
+		navigator3.setRace(Race.BLACK);
+		navigator3.setPhoneNumber("125-678-9012");
+
+		Navigator navigator4 = new Navigator();
+		navigator4.setNavigatorId("NAV004");
+		navigator4.setFirstName("Emily");
+		navigator4.setLastName("White");
+		navigator4.setDateOfBirth("1988-04-04");
+		navigator4.setAge(35);
+		navigator4.setGender(Gender.FEMALE);
+		navigator4.setRace(Race.WHITE);
+		navigator4.setPhoneNumber("126-789-0123");
+		
+		Navigator navigator5 = new Navigator();
+		navigator5.setNavigatorId("NAV005");
+		navigator5.setFirstName("Paul");
+		navigator5.setLastName("Green");
+		navigator5.setDateOfBirth("1980-12-12");
+		navigator5.setAge(43);
+		navigator5.setGender(Gender.MALE);
+		navigator5.setRace(Race.RED);
+		navigator5.setPhoneNumber("127-890-1234");
+		return Arrays.asList(navigator1, navigator2, navigator3, navigator4, navigator5);
 	}
 }
